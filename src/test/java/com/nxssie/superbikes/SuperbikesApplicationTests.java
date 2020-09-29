@@ -1,4 +1,4 @@
-package com.tiburcio.superbikes;
+package com.nxssie.superbikes;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

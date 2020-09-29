@@ -6,4 +6,9 @@ import com.nxssie.bicycles.entity.models.Bicycle;
 
 public interface IBicycleService {
 	public List<Bicycle> getAll();
+
+	public void addBicycle(Bicycle bicycle);
+
+	public void deleteBicycle(int id);
+
 }

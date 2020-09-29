@@ -20,4 +20,14 @@ public class BicycleServiceImpl implements IBicycleService {
 		return (List<Bicycle>) bicycleDao.findAll();
 	}
 
+	@Override
+	public void addBicycle(Bicycle bicycle) {
+		bicycleDao.save(bicycle);
+	}
+	
+	@Override
+	public void deleteBicycle (int id) {
+		bicycleDao.deleteById(id);
+	}
+	
 }
