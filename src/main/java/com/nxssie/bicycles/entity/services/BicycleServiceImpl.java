@@ -1,6 +1,7 @@
 package com.nxssie.bicycles.entity.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,16 @@ public class BicycleServiceImpl implements IBicycleService {
 		// TODO Auto-generated method stub
 		return (List<Bicycle>) bicycleDao.findAll();
 	}
+	
+	@Override
+	public Bicycle findById(int id, Bicycle bicycle) {
+		Optional<Bicycle> b = bicycleDao.findById(id);
+		
+		if (b.isPresent()) {
+
+			return bicycle;
+		}
+	}
 
 	@Override
 	public void addBicycle(Bicycle bicycle) {
@@ -28,6 +39,17 @@ public class BicycleServiceImpl implements IBicycleService {
 	@Override
 	public void deleteBicycle (int id) {
 		bicycleDao.deleteById(id);
+	}
+
+	@Override
+	public void updateBicyle(int id, Bicycle bicycle) {
+		Optional <Bicycle> b = bicycleDao.findById(id);
+		
+		if (b.isPresent()) {
+			bicycle.setId(id);
+			bicycleDao.save(bicycle);
+		}
+		
 	}
 	
 }

@@ -11,4 +11,9 @@ public interface IBicycleService {
 
 	public void deleteBicycle(int id);
 
+	public void updateBicyle(int id, Bicycle bicycle);
+
+	public Bicycle findById(int id, Bicycle bicycle);
+
+
 }
