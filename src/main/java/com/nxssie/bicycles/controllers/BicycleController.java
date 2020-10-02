@@ -29,8 +29,8 @@ public class BicycleController {
 	}
 	
 	@GetMapping("/api/bicycles/{id}")
-	private Bicycle findById(@PathVariable(value = "id") int id, Bicycle bicycle){
-		return bicycleService.findById(id, bicycle);
+	private Bicycle findById(@PathVariable(value = "id") int id){
+		return bicycleService.findById(id);
 	}
 		
 	@PostMapping("/api/bicycles")

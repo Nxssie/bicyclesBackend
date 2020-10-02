@@ -13,7 +13,7 @@ public interface IBicycleService {
 
 	public void updateBicyle(int id, Bicycle bicycle);
 
-	public Bicycle findById(int id, Bicycle bicycle);
+	public Bicycle findById(int id);
 
 
 }

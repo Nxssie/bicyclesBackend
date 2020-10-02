@@ -22,13 +22,14 @@ public class BicycleServiceImpl implements IBicycleService {
 	}
 	
 	@Override
-	public Bicycle findById(int id, Bicycle bicycle) {
+	public Bicycle findById(int id) {
 		Optional<Bicycle> b = bicycleDao.findById(id);
 		
 		if (b.isPresent()) {
-
-			return bicycle;
+			return b.get();
 		}
+		
+		return null;
 	}
 
 	@Override
